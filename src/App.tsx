@@ -9,6 +9,11 @@ import Chapter5 from "./chapters/Chapter5_UseEffect";
 import Chapter6 from "./chapters/Chapter6_ConditionalList";
 import Chapter7 from "./chapters/Chapter7_API";
 import Chapter8 from "./chapters/Chapter8_Routing";
+import Chapter9 from "./chapters/Chapter9_TypeScript";
+import Chapter10 from "./chapters/Chapter10_GlobalState";
+import Chapter11 from "./chapters/Chapter11_AsyncPatterns";
+import Chapter12 from "./chapters/Chapter12_CSSLayout";
+import Chapter13 from "./chapters/Chapter13_MiniProject";
 
 /**
  * App - 최상위 라우트 정의
@@ -34,6 +39,11 @@ function App() {
         <Route path="/chapter7" element={<Chapter7 />} />
         {/* Chapter8은 내부에 자체 중첩 라우트가 있으므로 *로 매칭 */}
         <Route path="/chapter8/*" element={<Chapter8 />} />
+        <Route path="/chapter9" element={<Chapter9 />} />
+        <Route path="/chapter10" element={<Chapter10 />} />
+        <Route path="/chapter11" element={<Chapter11 />} />
+        <Route path="/chapter12" element={<Chapter12 />} />
+        <Route path="/chapter13" element={<Chapter13 />} />
       </Route>
     </Routes>
   );

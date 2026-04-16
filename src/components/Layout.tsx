@@ -19,6 +19,11 @@ const chapters = [
   { path: "/chapter6", label: "6. 조건부 렌더링 & 리스트" },
   { path: "/chapter7", label: "7. API 연동" },
   { path: "/chapter8", label: "8. 라우팅" },
+  { path: "/chapter9", label: "9. TypeScript 기초", section: "실전" },
+  { path: "/chapter10", label: "10. 전역 상태 관리" },
+  { path: "/chapter11", label: "11. 비동기 API 패턴" },
+  { path: "/chapter12", label: "12. CSS 레이아웃 실전" },
+  { path: "/chapter13", label: "13. 종합 미니 프로젝트" },
 ];
 
 function Layout() {
@@ -30,10 +35,25 @@ function Layout() {
         <NavLink to="/" end>
           🏠 홈
         </NavLink>
-        {chapters.map((ch) => (
-          <NavLink key={ch.path} to={ch.path}>
-            {ch.label}
-          </NavLink>
+        {chapters.map((ch, i) => (
+          <div key={ch.path}>
+            {"section" in ch && ch.section && (
+              <div
+                style={{
+                  padding: "12px 20px 4px",
+                  fontSize: 11,
+                  color: "#64748b",
+                  textTransform: "uppercase",
+                  letterSpacing: 1,
+                  borderTop: i > 0 ? "1px solid #334155" : undefined,
+                  marginTop: i > 0 ? 8 : 0,
+                }}
+              >
+                {ch.section}
+              </div>
+            )}
+            <NavLink to={ch.path}>{ch.label}</NavLink>
+          </div>
         ))}
       </nav>
 
